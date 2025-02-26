@@ -21,8 +21,8 @@ public class AreaAdapter extends RecyclerView.Adapter<AreaAdapter.ViewHolder> {
     private List<Area> areaList=new ArrayList<>();
 
     private Context context;
-    public AreaAdapter( Context context) {
-
+    public AreaAdapter(List<Area> AreaList, Context context) {
+        areaList=AreaList;
         this.context = context;
     }
 

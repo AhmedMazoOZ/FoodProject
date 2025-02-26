@@ -1,0 +1,27 @@
+package com.example.foodplanner.NetworkLayer;
+
+import com.example.foodplanner.HomeScreen.Model.AreaResponse;
+import com.example.foodplanner.HomeScreen.Model.CategoryResponse;
+import com.example.foodplanner.HomeScreen.Model.RecipeResponse;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
+public interface ApiInterface {
+
+    @GET("random.php")
+    Call<RecipeResponse> getRandomRecipe();
+
+    @GET("categories.php")
+    Call<CategoryResponse> getCategories();
+    @GET("list.php?a=list")
+    Call<AreaResponse>getAreaes();
+    @GET("filter.php")
+    Call<RecipeResponse> getRecipesByCategory(@Query("c") String category);
+
+    @GET("filter.php")
+    Call<RecipeResponse> getMealsByArea(@Query("a") String area);
+    @GET("lookup.php")
+    Call<RecipeResponse> getMealById(@Query("i") String mealId);
+}
