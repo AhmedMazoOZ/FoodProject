@@ -42,6 +42,8 @@ public class Home_Activity extends AppCompatActivity implements HomeBridge.View 
 
     private List<Recipe> recipeList = new ArrayList<>();
     //
+    //
+    ///
     private List<Category> categoryList = new ArrayList<>();
     private List<Area> areaList = new ArrayList<>();
 
