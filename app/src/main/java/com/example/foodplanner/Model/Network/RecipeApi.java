@@ -1,8 +1,10 @@
 package com.example.foodplanner.Model.Network;
 
-import com.example.foodplanner.HomeScreen.Model.AreaResponse;
-import com.example.foodplanner.HomeScreen.Model.CategoryResponse;
-import com.example.foodplanner.HomeScreen.Model.RecipeResponse;
+
+
+import com.example.foodplanner.HomeScreen.View.Model.AreaResponse;
+import com.example.foodplanner.HomeScreen.View.Model.CategoryResponse;
+import com.example.foodplanner.HomeScreen.View.Model.RecipeResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -24,6 +26,7 @@ public  interface RecipeApi {
     Call<RecipeResponse> getMealsByArea(@Query("a") String area);
     @GET("lookup.php")
     Call<RecipeResponse> getMealById(@Query("i") String mealId);
+
 
 
 

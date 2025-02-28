@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
@@ -12,7 +13,7 @@ public class ApiClient {
     private static Retrofit retrofit = null;
 
     private static OkHttpClient okClient() {
-        return new okhttp3.OkHttpClient.Builder()
+        return new OkHttpClient.Builder()
                 .connectTimeout(2, TimeUnit.MINUTES)
                 .writeTimeout(1, TimeUnit.MINUTES)
                 .readTimeout(1, TimeUnit.MINUTES)
@@ -25,6 +26,7 @@ public class ApiClient {
                     .baseUrl(BASE_URL)
                     .client(okClient())
                     .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                     .build();
         }
         return retrofit;
